@@ -2,7 +2,7 @@
 class Ship {
     constructor(size) {
         this.length = size;
-        this.direction = true;
+        this.direction = true; // true means col wise and false means row wise.
         this.hitTaken = 0;
     }
 

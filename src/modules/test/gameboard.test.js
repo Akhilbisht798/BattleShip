@@ -30,16 +30,25 @@ describe("gameboard tests", () => {
     });
 
     it("Can place ship in row", () => {
-        expect(Board.PlaceShip(ship2, 2, 3)).toBe(true);
+        expect(Board.PlaceShip(ship2, 2, 3)).toBe(false);
     });
 
     it("Can attack the board", () => {
         expect(Board.Attack(1, 1)).toBe(2);
     });
 
-    it.todo("Can attack a ship");
+    it("Can attack a ship", () => {
+        expect(Board.Attack(2, 1)).toBe(2);
+    });
 
-    it.todo("Is ship sunk")
+    it("game Won", () => {
+        const board2 = GameBoard();
+        board2.initBoard()
+        expect(board2.WinCondition()).toBe(true);
+    })
 
+    it("game Not Won", () => {
+        expect(Board.WinCondition()).toBe(false);
+    })
 
 })
